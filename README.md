@@ -47,6 +47,7 @@ assign borrow = (~a&b);
 endmodule
 
 
+
 module fullsub(a,b,c,difference,borrow);
 input a,b,c;
 output difference,borrow;
