@@ -1,4 +1,6 @@
-# Experiment--03-Half-Subtractor-and-Full-subtractor
+## Developed by:Farhana H
+## Reference number:212223230057
+## Experiment--03-Half-Subtractor-and-Full-subtractor
 ## Implementation-of-Half-subtractor-and-Full-subtractor-circuit
 ## AIM:
 To design a half subtractor and full subtractor circuit and verify its truth table in Quartus using Verilog programming.
@@ -27,26 +29,33 @@ Diff = A ⊕ B ⊕ Bin B = A'Bin + A'B + BBin
 
 ## Procedure:
 ```
-1.Create a New Project:Open Quartus and create a new project by selecting "File">"New Project Wizard".Follow the wizard's instructions to set up your project,including specifying the project name,location,andtarget device(FPGA).
-2.Create a New Design File:Once the project is created,right-click on the project name in the Project Navigator and select "Add New File".-Choose "Verilog HDL File" or "VHDL File",depending on your choden hardware description language.
-3.Write the Combinational Logic Code:Open the newly created Verilog or VHDL file and write the code for your combinational logic.
-4.Complete the Project:To compile the project,click on"processing">"Start Complication" in the menu.Quartus will analyze your code,synthesize it into a netlist,and perform optimization based on your target FPGA device.
-5.Analyze and Fix Errors:If there are any erreors or warnings during the complication process,Quartus will display them in the message window.Review and fix any issues in your code if necessary.View the RTL diagram.
-6.Verification:Click on "File">"New">"Verification/debugging Files">"University Program VWF".Once waveform is created Right Click on the input/output Panel>"Insert Node or Bus">Click on Node Finder>Click on "List">Select All.Give the Input Combinations according to the Truth Table and the simulate the Output Waveform.
+1.Use module projname(input,output) to start the Verilog programming.
+2.Assign inputs and outputs using the word input and output respectively.
+3.Use defined keywords like wire,assign and required logic gates to represent the boolean expression.
+4.Use each output to represent one for difference and the other for borrow.
+5.End the verilog program using keyword endmodule
 ```
 ## Program:
 ```
 /*
-Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming.
-Developed by: Farhana H
-RegisterNumber:23012987  
+Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. 
+module halfsub(a,b,difference,borrow);
+input a,b;
+output difference,borrow;
+assign difference = (a^b);
+assign borrow = (~a&b);
+endmodule
+
+
+module fullsub(a,b,c,difference,borrow);
+input a,b,c;
+output difference,borrow;
+assign difference=(a^b^c);
+assign borrow=(~a&(b^c)|(b&c));
+endmodule
 */
 ```
-## Code:
-## Half Subtractor
-![image](https://github.com/syedfayaz3105/Experiment--03-Half-Subtractor-and-Full-subtractor/assets/147144126/5ddf5a96-95f4-49a2-874a-c1863155cfe4)
-## Full Subtractor
-![image](https://github.com/syedfayaz3105/Experiment--03-Half-Subtractor-and-Full-subtractor/assets/147144126/d02a823c-d98f-4ed2-8419-02d9dcbe3472)
+
 ## Truthtable
 ## Half Subtractor
 ![image](https://github.com/syedfayaz3105/Experiment--03-Half-Subtractor-and-Full-subtractor/assets/147144126/797acd71-fe4a-4acd-87f6-d6d8ad500d2c)
